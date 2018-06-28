@@ -23,7 +23,7 @@ involved. Such users may find themselves becoming contributors, as described in 
 ### Contributors
 
 Contributors are community members who contribute in concrete ways to the project. Anyone can become
-a contributor, and contributions can take many forms, as detailed in a separate document. 
+a contributor, and contributions can take many forms. 
 There is no expectation of commitment to the project, no specific skill requirements and no selection process.
 
 In addition to their actions as users, contributors may also find themselves doing one or more of the following:
@@ -59,16 +59,9 @@ That is, they can make changes directly to project outputs, without having to su
 This does not mean that a committer is free to do what they want. In fact, committers have no more
 authority over the project than contributors.  While committership indicates a valued member of the
 community who has demonstrated a healthy respect for the project’s aims and objectives, their work
-continues to be reviewed by the community before acceptance in an official release. The key
-difference between a committer and a contributor is when this approval is sought from the community.
-A committer seeks approval after the contribution is made, rather than before.
-
-Seeking approval after making a contribution is known as a commit-then-review process. It is more
-efficient to allow trusted people to make direct contributions, as the majority of those
-contributions will be accepted by the project. The project employs various communication mechanisms
-to ensure that all contributions are reviewed by the community as a whole. By the time a contributor
-is invited to become a committer, they will have become familiar with the project’s various tools as
-a user and then as a contributor.
+continues to be reviewed by the community before acceptance.
+This means, a committer should still open a pull request for any changes, so his contributions can
+be reviewed by at least a second commiter.
 
 Anyone can become a committer; there are no special requirements, other than to have shown a
 willingness and ability to participate in the project as a team player. Typically, a potential
@@ -97,10 +90,6 @@ continue engaging with the project.
 A committer who shows an above-average level of contribution to the project, particularly with
 respect to its strategic direction and long-term health, may be nominated to become a member of the
 PMC. This role is described below. 
-
-### Project Management Committee
-
-The project management committee consists of those individuals identified as ‘project owners’ on the development site. The PMC has additional responsibilities over and above those of a committer. These responsibilities ensure the smooth running of the project. PMC members are expected to review code contributions, participate in strategic planning, approve changes to the governance model and manage the copyrights within the project outputs.
 
 ### Project Management Committee
 
