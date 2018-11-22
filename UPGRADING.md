@@ -26,8 +26,6 @@ fly, allowing to have one pipeline per branch. To update:
   `oc process cd/cd-jenkins-webhook-proxy | oc create -f- -n xyz-cd`. Repeat for
   each project.
 
-TODO: Setup secret.
-
 ### Update components
 
 For each component, follow the following steps:
@@ -46,5 +44,13 @@ In `Jenkinsfile`:
 In `docker/Dockerfile`:
 Adapt the content to match the latest state of the quickstarter boilerplates.
 
+In BitBucket, remove the existing "Post Webhooks" and create a new "Webhook",
+pointing to the new webhook proxy. The URL has to be of the form
+`https://webhook-proxy-$PROJECT_ID-cd.$DOMAIN?trigger_secret=$SECRET`. As
+events, select "Repository Push" and "Pull request Merged + Declined".
+
 ### Update provisioning app
-Trigger the build in Jenkins to deploy the latest version.
+
+* Update the OCP resources using Tailor or manually by applying changes as
+  appropriate.
+* Trigger the build in Jenkins to deploy the latest version.
