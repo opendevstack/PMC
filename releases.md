@@ -23,16 +23,16 @@ patches are made.
 Each repository keeps a separate changelog, in the format described by
 [keepachangelog](https://keepachangelog.com/en/1.0.0/).
 
-## Upgrading
+## Updating
 
 Users must not be required to take any action between patch versions. Between
 `MAJOR.MINOR` versions, manual actions might need to be performed (such as
-updating OpenShift resources). These actions have to be described in an
-`UPGRADING.md` guide inside each repository.
+updating OpenShift resources). These actions have to be described in
+`opendevstack.github.io/doc/update-guide.md`.
 
 ## Release process of `MAJOR.MINOR` versions
 
-* Ensure changelogs and upgrading guides are up-to-date and complete.
+* Ensure changelogs and update guides are up-to-date and complete.
 * Create the appropriate branch as described in the [Git](#git) section.
 * In `ods-project-quickstarters`, on the release branch, set all pointers to the
   shared library in each `Jenkinsfile` to the release branch (e.g. change the
@@ -42,6 +42,6 @@ updating OpenShift resources). These actions have to be described in an
 
 ## Release process of `MAJOR.MINOR.PATCH` versions
 
-* Ensure changelogs re up-to-date and complete.
+* Ensure changelogs are up-to-date and complete.
 * Tag the latest commit in each release branch with the specific version, e.g.
   `1.2.0`.
