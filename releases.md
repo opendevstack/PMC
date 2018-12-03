@@ -16,12 +16,17 @@ Development happens on the `master` branch. When a new `MAJOR.MINOR` release is
 made, a new branch is created, e.g. `0.1.x` or `1.0.x`. On this branch, a tag is
 created which represents a specific `MAJOR.MINOR.PATCH` version, such as 0.1.0,
 0.1.1 or 1.0.0. Tags are never updated, while branches such as `0.1.x` evolve as
-patches are made.
+patches are made. Changes on release branches are merged back into `master` as
+appropriate.
 
 ## Changelogs
 
 Each repository keeps a separate changelog, in the format described by
-[keepachangelog](https://keepachangelog.com/en/1.0.0/).
+[keepachangelog](https://keepachangelog.com/en/1.0.0/). Unreleased changes are
+tracked when they are made (either in the pull request where the change is made
+or shortly after merge). Once a release branch is created, the unreleased changes
+are marked as being released in that branch (and this commit is then merged into
+`master` as well).
 
 ## Updating
 
