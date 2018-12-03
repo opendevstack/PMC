@@ -37,6 +37,9 @@ updating OpenShift resources). These actions have to be described in
 * In `ods-project-quickstarters`, on the release branch, set all pointers to the
   shared library in each `Jenkinsfile` to the release branch (e.g. change the
   pointer from `production` to `1.2.x`).
+* In `ods-provisioning-app`, on the release branch, set the pointer to the
+  shared library in the `Jenkinsfile` to the release branch (e.g. change the
+  pointer from `production` to `1.2.x`).
 * Tag the latest commit in each release branch with the specific version, e.g.
   `1.2.0`.
 
