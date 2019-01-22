@@ -14,8 +14,8 @@ the format `MAJOR.MINOR.PATCH` and thus loosely follows SemVer.
 
 Development happens on the `master` branch. When a new `MAJOR.MINOR` release is
 made, a new branch is created, e.g. `0.1.x` or `1.0.x`. On this branch, a tag is
-created which represents a specific `MAJOR.MINOR.PATCH` version, such as 0.1.0,
-0.1.1 or 1.0.0. Tags are never updated, while branches such as `0.1.x` evolve as
+created which represents a specific `MAJOR.MINOR.PATCH` version, such as v0.1.0,
+v0.1.1 or v1.0.0. Tags are never updated, while branches such as `0.1.x` evolve as
 patches are made.
 
 ## Changelogs
@@ -41,10 +41,10 @@ updating OpenShift resources). These actions have to be described in
   shared library in the `Jenkinsfile` to the release branch (e.g. change the
   pointer from `production` to `1.2.x`).
 * Tag the latest commit in each release branch with the specific version, e.g.
-  `1.2.0`.
+  `v1.2.0`.
 
 ## Release process of `MAJOR.MINOR.PATCH` versions
 
 * Ensure changelogs are up-to-date and complete.
 * Tag the latest commit in each release branch with the specific version, e.g.
-  `1.2.0`.
+  `v1.2.0`.
