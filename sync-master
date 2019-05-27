@@ -1,0 +1,22 @@
+#!/bin/bash
+set -eu
+
+# Script to sync master branches of all repositories starting with "ods-" between
+# GitHub (defaulting to "ods" as remote) and BitBucket (refered to as "origin").
+
+remote=${1:-ods}
+
+cd ..
+
+for d in ods-*/ ; do
+    if [ $d != "ods-configuration/" ]; then
+        echo "Syncing master of $d ..."
+        cd $d
+        git checkout master
+        git fetch $remote
+        git reset --hard $remote/master
+        git push origin master
+        cd - > /dev/null
+        echo ""
+    fi
+done
