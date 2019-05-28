@@ -8,16 +8,17 @@ OpenDevStack uses one release version across several sub-repositories.
 Specifically, `ods-core`, `ods-project-quickstarters`,
 `ods-jenkins-shared-library`, `ods-provisioning-app` and
 `ods-configuration-sample` are versioned as one unit. The version number is in
-the format `MAJOR.MINOR.PATCH` and thus loosely follows SemVer.
+the format `MAJOR.MINOR.PATCH` and thus loosely (!) follows SemVer.
 
 ## Git
 
 Development happens on the `master` branch. When a new `MAJOR.MINOR` release is
 made, a new branch is created, e.g. `0.1.x` or `1.0.x`. On this branch, a tag is
-created which represents a specific `MAJOR.MINOR.PATCH` version, such as v0.1.0,
-v0.1.1 or v1.0.0. Tags are never updated, while branches such as `0.1.x` evolve as
+created which represents a specific `MAJOR.MINOR.PATCH` version, such as `v0.1.0`,
+`v0.1.1` or `v1.0.0`. Tags are never updated, while branches such as `0.1.x` evolve as
 patches are made. Changes on release branches are merged back into `master` as
-appropriate.
+appropriate, however usually patches are done on `master` and then applied into affected
+release branches.
 
 ## Changelogs
 
@@ -26,7 +27,10 @@ Each repository keeps a separate changelog, in the format described by
 tracked when they are made (either in the pull request where the change is made
 or shortly after merge). Once a release branch is created, the unreleased changes
 are marked as being released in that branch (and this commit is then merged into
-`master` as well).
+`master` as well). 
+
+To make sure each changelog is complete, select the version to be released from the [projects overview](https://github.com/orgs/opendevstack/projects/) and filter for e.g. `repo:opendevstack/ods-provisioning-app`.
+Then check that all completed issues are referenced (linked) from the changelog.
 
 ## Updating
 
