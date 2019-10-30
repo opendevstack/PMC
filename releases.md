@@ -7,15 +7,25 @@ This document describes how OpenDevStack deals with releases.
 OpenDevStack uses one release version across several sub-repositories.
 Specifically, `ods-core`, `ods-project-quickstarters`,
 `ods-jenkins-shared-library`, `ods-provisioning-app` and
-`ods-configuration-sample` are versioned as one unit. The version number is in
-the format `MAJOR.MINOR.PATCH` and thus loosely (!) follows SemVer.
+`ods-configuration-sample` are versioned as one unit. The versioning scheme
+is a simple number, increasing every release (e.g. `2`, `3` and so on). The
+reasoning behind this is:
+
+* A simple number across all components is easy to understand and use for users
+* SemVer (which we used originally) is tricky for complex projects like ODS - it is only suited well to libraries
+* As the next version number is always known, code on `master` can already point to it
+
+For more background on the versioning, see #16.
+
+Next to the major versions there might be patch releases as needed.
+For now, major versions are expected to happen roughly twice a year.
 
 ## Git
 
-Development happens on the `master` branch. When a new `MAJOR.MINOR` release is
-made, a new branch is created, e.g. `0.1.x` or `1.0.x`. On this branch, a tag is
-created which represents a specific `MAJOR.MINOR.PATCH` version, such as `v0.1.0`,
-`v0.1.1` or `v1.0.0`. Tags are never updated, while branches such as `0.1.x` evolve as
+Development happens on the `master` branch. When a new major release is
+made, a new branch is created, e.g. `2` or `3`. On this branch, a tag is
+created which represents a specific version, such as `v1`,
+`v2` or `v2.1` (for patch releases if needed). Tags are never updated, while branches such as `2` evolve as
 patches are made. Changes on release branches are merged back into `master` as
 appropriate, however usually patches are done on `master` and then applied into affected
 release branches.
@@ -35,25 +45,28 @@ Then check that all completed issues are referenced (linked) from the changelog.
 ## Updating
 
 Users must not be required to take any action between patch versions. Between
-`MAJOR.MINOR` versions, manual actions might need to be performed (such as
+major versions, manual actions might need to be performed (such as
 updating OpenShift resources). These actions have to be described in
 `opendevstack.github.io/doc/update-guide.md`.
 
-## Release process of `MAJOR.MINOR` versions
+## Release process of major versions
 
 * Ensure changelogs and update guides are up-to-date and complete.
 * Create the appropriate branch as described in the [Git](#git) section.
-* In `ods-project-quickstarters`, on the release branch, set all pointers to the
-  shared library in each `Jenkinsfile` to the release branch (e.g. change the
-  pointer from `production` to `1.2.x`).
-* In `ods-provisioning-app`, on the release branch, set the pointer to the
-  shared library in the `Jenkinsfile` to the release branch (e.g. change the
-  pointer from `production` to `1.2.x`).
-* Tag the latest commit in each release branch with the specific version, e.g.
-  `v1.2.0`.
+* Tag the latest commit on the release branch with the specific version, e.g.
+  `v3`.
 
-## Release process of `MAJOR.MINOR.PATCH` versions
+After the release:
+* In `ods-project-quickstarters@master`, set all pointers to the
+  shared library and agent images in each `Jenkinsfile` to the next version (e.g. change the
+  pointer from `2` to `3`).
+* In `ods-provisioning-app@master`, set the pointer to the
+  shared library and agent images in the `Jenkinsfile` to the next version (e.g. change the
+  pointer from `2` to `3`).
+
+
+## Release process of patch versions
 
 * Ensure changelogs are up-to-date and complete.
 * Tag the latest commit in each release branch with the specific version, e.g.
-  `v1.2.0`.
+  `v3.1`.
