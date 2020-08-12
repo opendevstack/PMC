@@ -37,13 +37,13 @@ Then check that all completed issues/pull requests are referenced (linked) from 
 ## Release process of major versions
 
 * Ensure issues of current GitHub project are either done or moved, changelogs and update guides are up-to-date and all tests run successfully.
-* Create a new section for the new version in the changelogs on master branch and move all unreleased entries to it.
+* Create a new section (e.g. `## [3.0] - 2020-08-11`) for the new version in the changelogs on master branch and move all unreleased entries to it.
 * Create the appropriate branch as described in the [Git](#git) section.
-* In each repository on the release branch, remove the `prerelease: Preview` from `docs/antora.yml` and replace the `## Unreleased` line in `CHANGELOG.md` with the specific version and date (e.g. `## [3.0] - 2020-08-11`).
-* In `ods-core/configuration-sample/ods-core.env.sample` on the release branch, change the value of `ODS_IMAGE_TAG` and `ODS_GIT_REF` to the release branch name (e.g. `3.x`).
+* In each repository on the release branch, remove the `prerelease: Preview` from `docs/antora.yml`.
+* In `ods-core/configuration-sample/ods-core.env.sample` on the release branch, change the value of `ODS_IMAGE_TAG`, `ODS_GIT_REF`, `DOC_GEN_FROM_IMAGE`, `PROV_APP_FROM_IMAGE` and `PROV_APP_IMAGE` from `latest` to the release branch name (e.g. `3.x`).
 * Tag the latest commit in each release branch with the specific version, e.g. `v3.0.0`. GitHub has a `Draft a new release` feature that can be used for that.
 * Close the GitHub Project of the version that was just released and create one for the next version if not yet existing.
-* In each repository on the master branch, set `version` in `docs/antora.yml` to the next major version number (e.g. `4.x`). Also, in `CHANGELOG.md`, add a line underneath `## Unreleased` with the specific version and date (e.g. `## [3.0] - 2020-08-11`). 
+* In each repository on the master branch, set `version` in `docs/antora.yml` to the next major version number (e.g. `4.x`). 
 * In each quickstarter inside `ods-quickstarters` on the master branch, set `version` to the next major version number (e.g. `4.x`) in the `files/metadata.yml` file.
 * Update the roadmap section in file `docs/modules/getting-started/pages/index.adoc` in repository `ods-core` on master.
 
