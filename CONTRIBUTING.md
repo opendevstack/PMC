@@ -98,4 +98,4 @@ Please note that all masters and all other from OpenDevStack derived tags need t
   git push github-<YOUR_GITHUB_ACCOUNT_NAME> <BRANCH_NAME>
   ```
 
-* Create a PR from this github-<YOUR_GITHUB_ACCOUNT_NAME>/<BRANCH_NAME> branch on your GitHub repo to the OpenDevStack GitHub repo. Please be aware that in order to pass the changelog enforcer check, you either need to add a entry to the CHANGELOG.md file describing your change or add the 'skip changelog' label in the pull request to skip it.
+* Create a PR from this github-<YOUR_GITHUB_ACCOUNT_NAME>/<BRANCH_NAME> branch on your GitHub repo to the OpenDevStack GitHub repo. Please be aware that in order to pass the changelog enforcer check, you either need to add an entry to the CHANGELOG.md file describing your change or add the 'skip changelog' label in the pull request to skip it.
