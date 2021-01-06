@@ -22,7 +22,7 @@ The following is a set of guidelines for contributing to [OpenDevStack](https://
 
 
 ## Notes
-Please note that all masters and all other from OpenDevStack derived tags need to stay clean at each point in time. OpenShift and Rundeck are configured to point to the production branch, where you can make changes.
+Please note that all masters and all other from OpenDevStack derived tags need to stay clean at each point in time. OpenShift is configured to point to the production branch, where you can make changes.
 
 
 
@@ -98,4 +98,4 @@ Please note that all masters and all other from OpenDevStack derived tags need t
   git push github-<YOUR_GITHUB_ACCOUNT_NAME> <BRANCH_NAME>
   ```
 
-* Create a PR from this github-<YOUR_GITHUB_ACCOUNT_NAME>/<BRANCH_NAME> branch on your GitHub repo to the OpenDevStack GitHub repo. 
+* Create a PR from this github-<YOUR_GITHUB_ACCOUNT_NAME>/<BRANCH_NAME> branch on your GitHub repo to the OpenDevStack GitHub repo. Please be aware that in order to pass the changelog enforcer check, you either need to add a entry to the CHANGELOG.md file describing your change or add the 'skip changelog' label in the pull request to skip it.
